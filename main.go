@@ -34,6 +34,47 @@ func formatFile() {
 	case ".sh", ".bash":
 		installCheck("shfmt")
 		formatShellScriptFiles(codePath)
+	case ".html":
+		installCheck("html-minifier")
+		formatHTMLFiles(codePath)
+	case ".css":
+		installCheck("csso-cli")
+		formatCSSFiles(codePath)
+	case ".js":
+		installCheck("uglifyjs")
+		formatJSFiles(codePath)
+	case ".py":
+		//
+	case ".java":
+		//
+	case ".cpp":
+		//
+	case ".c":
+		//
+	case ".ts":
+		//
+	case ".php":
+		//
+	case ".kts":
+		//
+	case ".rb":
+		//
+	case ".vba":
+		//
+	case ".swift":
+		//
+	case ".Rd":
+		//
+	case ".rs":
+		//
+	case ".scala":
+		//
+	case ".dart":
+		//
+	case ".jl":
+		//
+	case ".ps1":
+		//
 	default:
 		log.Println("Error:", codePath)
 	}
@@ -48,6 +89,47 @@ func formatDirectory() {
 		case ".sh", ".bash":
 			installCheck("shfmt")
 			formatShellScriptFiles(codePath)
+		case ".html":
+			installCheck("html-minifier")
+			formatHTMLFiles(codePath)
+		case ".css":
+			installCheck("csso-cli")
+			formatCSSFiles(codePath)
+		case ".js":
+			installCheck("uglifyjs")
+			formatJSFiles(codePath)
+		case ".py":
+			//
+		case ".java":
+			//
+		case ".cpp":
+			//
+		case ".c":
+			//
+		case ".ts":
+			//
+		case ".php":
+			//
+		case ".kts":
+			//
+		case ".rb":
+			//
+		case ".vba":
+			//
+		case ".swift":
+			//
+		case ".Rd":
+			//
+		case ".rs":
+			//
+		case ".scala":
+			//
+		case ".dart":
+			//
+		case ".jl":
+			//
+		case ".ps1":
+			//
 		default:
 			log.Println("Error:", codePath)
 		}
@@ -63,6 +145,24 @@ func formatGoFiles(filePath string) {
 
 func formatShellScriptFiles(filePath string) {
 	cmd := exec.Command("shfmt", "-l -w", filePath)
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
+}
+
+func formatHTMLFiles(filePath string) {
+	cmd := exec.Command("html-minifier")
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
+}
+
+func formatCSSFiles(filePath string) {
+	cmd := exec.Command("csso-cli")
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
+}
+
+func formatJSFiles(filePath string) {
+	cmd := exec.Command("uglifyjs")
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
 }
