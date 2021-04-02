@@ -4,22 +4,6 @@
 ### Supported Languages
 - [Shell Script](https://github.com/mvdan/sh)
 - [Go](https://go.dev)
-- [HTML](https://github.com/kangax/html-minifier)
-- [JavaScript|TypeScript](https://github.com/mishoo/UglifyJS)
-- [CSS](https://github.com/css/csso-cli)
-- [Python]()
-- [Java]()
-- [C#|C++]()
-- [TypeScript]()
-- [PHP]()
-- [Kotlin]()
-- [Ruby]()
-- [VBA]()
-- [Swift]()
-- [R]()
-- [Rust]()
-- [Scala]()
-- [Dart]()
 
 ---
 ### Features
