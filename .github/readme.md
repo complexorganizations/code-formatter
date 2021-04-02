@@ -1,8 +1,12 @@
 ### code-formatter
 
 
-### Requirements
+### Supported Languages
 - [Shell Script](https://github.com/mvdan/sh)
+- [Go](https://go.dev)
+- [HTML](https://github.com/kangax/html-minifier)
+- [JavaScript](https://github.com/mishoo/UglifyJS)
+- [CSS](https://github.com/css/csso-cli)
 
 ---
 ### Features
