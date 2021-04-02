@@ -159,7 +159,7 @@ func formatDirectory() {
 			//
 		// PowerShell
 		case ".ps1":
-		//
+			//
 		default:
 			log.Println("Error:", codePath)
 		}
