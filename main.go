@@ -59,7 +59,7 @@ func formatFile() {
 		//
 	// C
 	case ".c", ".cats", ".cl", ".h", ".idc":
-		// Language C
+		//
 	// TypeScript
 	case ".ts":
 		//
@@ -129,7 +129,7 @@ func formatDirectory() {
 			//
 		// C
 		case ".c", ".cats", ".cl", ".h", ".idc":
-			// Language C
+			//
 		// TypeScript
 		case ".ts":
 			//
@@ -224,6 +224,6 @@ func commandExists(cmd string) bool {
 	if err != nil {
 		return false
 	}
-	_ = appName // Var declared and not used
+	_ = appName // variable declared and not used
 	return true
 }
