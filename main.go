@@ -28,51 +28,66 @@ func main() {
 
 func formatFile() {
 	switch filepath.Ext(codePath) {
+	// Golang
 	case ".go":
 		installCheck("go")
 		formatGoFiles(codePath)
+	// Shell Script
 	case ".sh", ".bash":
 		installCheck("shfmt")
 		formatShellScriptFiles(codePath)
+	// HTML
 	case ".html":
 		installCheck("html-minifier")
 		formatHTMLFiles(codePath)
+	// CSS
 	case ".css":
 		installCheck("csso-cli")
 		formatCSSFiles(codePath)
+	// JavaScript
 	case ".js":
 		installCheck("uglifyjs")
 		formatJSFiles(codePath)
+	// Python
 	case ".py":
 		//
+	// Java
 	case ".java":
 		//
+	// C++
 	case ".cpp":
 		//
-	case ".c":
-		//
+	// C
+	case ".c", ".cats", ".cl", ".h", ".idc":
+		// Language C
+	// TypeScript
 	case ".ts":
 		//
+	// PHP
 	case ".php":
 		//
+	// Kotlin
 	case ".kts":
 		//
+	// Ruby
 	case ".rb":
 		//
+	// Visual Basic
 	case ".vba":
 		//
+	// Swift
 	case ".swift":
 		//
-	case ".Rd":
-		//
+	// Rust
 	case ".rs":
 		//
+	// Scala
 	case ".scala":
 		//
+	// Dart
 	case ".dart":
 		//
-	case ".jl":
-		//
+	// PowerShell
 	case ".ps1":
 		//
 	default:
@@ -83,53 +98,68 @@ func formatFile() {
 func formatDirectory() {
 	filepath.Walk(codePath, func(path string, info os.FileInfo, err error) error {
 		switch filepath.Ext(path) {
+		// Golang
 		case ".go":
 			installCheck("go")
-			formatGoFiles(path)
+			formatGoFiles(codePath)
+		// Shell Script
 		case ".sh", ".bash":
 			installCheck("shfmt")
 			formatShellScriptFiles(codePath)
+		// HTML
 		case ".html":
 			installCheck("html-minifier")
 			formatHTMLFiles(codePath)
+		// CSS
 		case ".css":
 			installCheck("csso-cli")
 			formatCSSFiles(codePath)
+		// JavaScript
 		case ".js":
 			installCheck("uglifyjs")
 			formatJSFiles(codePath)
+		// Python
 		case ".py":
 			//
+		// Java
 		case ".java":
 			//
+		// C++
 		case ".cpp":
 			//
-		case ".c":
-			//
+		// C
+		case ".c", ".cats", ".cl", ".h", ".idc":
+			// Language C
+		// TypeScript
 		case ".ts":
 			//
+		// PHP
 		case ".php":
 			//
+		// Kotlin
 		case ".kts":
 			//
+		// Ruby
 		case ".rb":
 			//
+		// Visual Basic
 		case ".vba":
 			//
+		// Swift
 		case ".swift":
 			//
-		case ".Rd":
-			//
+		// Rust
 		case ".rs":
 			//
+		// Scala
 		case ".scala":
 			//
+		// Dart
 		case ".dart":
 			//
-		case ".jl":
-			//
+		// PowerShell
 		case ".ps1":
-			//
+		//
 		default:
 			log.Println("Error:", codePath)
 		}
