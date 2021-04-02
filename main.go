@@ -105,7 +105,7 @@ func formatJSFiles(filePath string) {
 
 func installCheck(appName string) {
 	if !commandExists(appName) {
-		log.Printf("The application %s was not found in the system. \n", appName)
+		log.Fatalf("The application %s was not found in the system. \n", appName)
 	}
 }
 
