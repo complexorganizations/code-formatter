@@ -9,7 +9,7 @@
 - [CSS](https://github.com/css/csso-cli)
 - [Python]()
 - [Java]()
-- [C#|C++]()
+- [C#|C++|C]()
 - [TypeScript]()
 - [PHP]()
 - [Kotlin]()
@@ -20,6 +20,7 @@
 - [Rust]()
 - [Scala]()
 - [Dart]()
+- [PowerShell]()
 
 ---
 ### Features
