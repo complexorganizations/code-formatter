@@ -43,6 +43,38 @@ func formatFile() {
 	case ".js":
 		installCheck("uglifyjs")
 		formatJSFiles(codePath)
+	case ".py":
+		//
+	case ".java":
+		//
+	case ".cpp":
+		//
+	case ".c":
+		//
+	case ".ts":
+		//
+	case ".php":
+		//
+	case ".kts":
+		//
+	case ".rb":
+		//
+	case ".vba":
+		//
+	case ".swift":
+		//
+	case ".Rd":
+		//
+	case ".rs":
+		//
+	case ".scala":
+		//
+	case ".dart":
+		//
+	case ".jl":
+		//
+	case ".ps1":
+		//
 	default:
 		log.Println("Error:", codePath)
 	}
@@ -66,6 +98,38 @@ func formatDirectory() {
 		case ".js":
 			installCheck("uglifyjs")
 			formatJSFiles(codePath)
+		case ".py":
+			//
+		case ".java":
+			//
+		case ".cpp":
+			//
+		case ".c":
+			//
+		case ".ts":
+			//
+		case ".php":
+			//
+		case ".kts":
+			//
+		case ".rb":
+			//
+		case ".vba":
+			//
+		case ".swift":
+			//
+		case ".Rd":
+			//
+		case ".rs":
+			//
+		case ".scala":
+			//
+		case ".dart":
+			//
+		case ".jl":
+			//
+		case ".ps1":
+			//
 		default:
 			log.Println("Error:", codePath)
 		}
