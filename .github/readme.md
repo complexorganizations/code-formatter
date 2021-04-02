@@ -21,6 +21,8 @@
 - [Scala]()
 - [Dart]()
 - [PowerShell]()
+- [Julia]()
+- [Visual Basic]()
 
 ---
 ### Features
