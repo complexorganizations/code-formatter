@@ -34,6 +34,15 @@ func formatFile() {
 	case ".sh", ".bash":
 		installCheck("shfmt")
 		formatShellScriptFiles(codePath)
+	case ".html":
+		installCheck("html-minifier")
+		formatHTMLFiles(codePath)
+	case ".css":
+		installCheck("csso-cli")
+		formatCSSFiles(codePath)
+	case ".js":
+		installCheck("uglifyjs")
+		formatJSFiles(codePath)
 	default:
 		log.Println("Error:", codePath)
 	}
@@ -48,6 +57,15 @@ func formatDirectory() {
 		case ".sh", ".bash":
 			installCheck("shfmt")
 			formatShellScriptFiles(codePath)
+		case ".html":
+			installCheck("html-minifier")
+			formatHTMLFiles(codePath)
+		case ".css":
+			installCheck("csso-cli")
+			formatCSSFiles(codePath)
+		case ".js":
+			installCheck("uglifyjs")
+			formatJSFiles(codePath)
 		default:
 			log.Println("Error:", codePath)
 		}
@@ -56,19 +74,33 @@ func formatDirectory() {
 }
 
 func formatGoFiles(filePath string) {
-	if filepath.Ext(filePath) == ".go" {
-		cmd := exec.Command("go", "fmt", filePath)
-		cmd.Run()
-		fmt.Println("Enhancing:", filePath)
-	}
+	cmd := exec.Command("go", "fmt", filePath)
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
 }
 
 func formatShellScriptFiles(filePath string) {
-	if filepath.Ext(filePath) == ".sh" {
-		cmd := exec.Command("shfmt", "-l -w", filePath)
-		cmd.Run()
-		fmt.Println("Enhancing:", filePath)
-	}
+	cmd := exec.Command("shfmt", "-l -w", filePath)
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
+}
+
+func formatHTMLFiles(filePath string) {
+	cmd := exec.Command("html-minifier")
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
+}
+
+func formatCSSFiles(filePath string) {
+	cmd := exec.Command("csso-cli")
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
+}
+
+func formatJSFiles(filePath string) {
+	cmd := exec.Command("uglifyjs")
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
 }
 
 func installCheck(appName string) {
