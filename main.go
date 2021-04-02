@@ -90,6 +90,12 @@ func formatFile() {
 	// PowerShell
 	case ".ps1":
 		//
+	// JSON
+	case ".json":
+		//
+	// Markdown
+	case ".md":
+		//
 	default:
 		log.Println("Error:", codePath)
 	}
@@ -159,6 +165,12 @@ func formatDirectory() {
 			//
 		// PowerShell
 		case ".ps1":
+			//
+		// JSON
+		case ".json":
+			//
+		// Markdown
+		case ".md":
 			//
 		default:
 			log.Println("Error:", codePath)
