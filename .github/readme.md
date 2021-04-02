@@ -8,18 +8,18 @@
 - [JavaScript|TypeScript](https://github.com/mishoo/UglifyJS)
 - [CSS](https://github.com/css/csso-cli)
 - [Python]()
-- [Java]
-- [C#|C++]
-- [TypeScript]
-- [PHP]
-- [Kotlin]
-- [Ruby]
-- [VBA]
-- [Swift]
-- [R]
-- [Rust]
-- [Scala]
-- [Dart]
+- [Java]()
+- [C#|C++]()
+- [TypeScript]()
+- [PHP]()
+- [Kotlin]()
+- [Ruby]()
+- [VBA]()
+- [Swift]()
+- [R]()
+- [Rust]()
+- [Scala]()
+- [Dart]()
 
 ---
 ### Features
