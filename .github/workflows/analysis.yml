@@ -19,4 +19,4 @@ jobs:
       - name: Build Test
         run: go build -v .
       - name: Run the build
-        run: ./code-formatter
+        run: ./code-formatter .
