@@ -7,7 +7,7 @@
 - [HTML](https://github.com/kangax/html-minifier)
 - [JavaScript](https://github.com/mishoo/UglifyJS)
 - [TypeScript]()
-- [CSS](https://github.com/css/csso-cli)
+- [CSS](https://github.com/cssnano/cssnano)
 - [Python]()
 - [Java]()
 - [C#]()
