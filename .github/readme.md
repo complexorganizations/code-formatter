@@ -60,7 +60,7 @@ Is it possible to get the requisite formmaters mounted automatically?
 * Name: Prajwal Koirala
 * Website: [prajwalkoirala.com](https://www.prajwalkoirala.com)
 
----	
+---
 ### Credits
 Open Source Community
 
