@@ -28,7 +28,7 @@
 
 ---
 ### Features
-- Format, Beautify, Optimize code.
+- Formatting, beautifying, and optimizing code.
 
 ---
 ### Installation
