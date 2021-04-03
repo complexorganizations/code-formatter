@@ -265,7 +265,10 @@ func formatSwiftFiles(filePath string) {
 }
 
 func formatRustFiles(filePath string) {
-	//
+	installCheck("rustfmt")
+	cmd := exec.Command("rustfmt", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatScalaFiles(filePath string) {
