@@ -42,7 +42,7 @@ func formatFile() {
 		formatHTMLFiles(codePath)
 	// CSS
 	case ".css":
-		installCheck("csso-cli")
+		installCheck("cssnano")
 		formatCSSFiles(codePath)
 	// JavaScript
 	case ".js":
@@ -121,7 +121,7 @@ func formatDirectory() {
 			formatHTMLFiles(codePath)
 		// CSS
 		case ".css":
-			installCheck("csso-cli")
+			installCheck("cssnano")
 			formatCSSFiles(codePath)
 		// JavaScript
 		case ".js":
@@ -198,19 +198,19 @@ func formatShellScriptFiles(filePath string) {
 }
 
 func formatHTMLFiles(filePath string) {
-	cmd := exec.Command("html-minifier")
+	cmd := exec.Command("html-minifier", filePath, "-o", filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
 }
 
 func formatCSSFiles(filePath string) {
-	cmd := exec.Command("csso-cli")
+	cmd := exec.Command("cssnano", filePath, filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
 }
 
 func formatJSFiles(filePath string) {
-	cmd := exec.Command("uglifyjs")
+	cmd := exec.Command("uglifyjs", "-b", "--", filePath, "-o", filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
 }
