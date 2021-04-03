@@ -30,23 +30,18 @@ func formatFile() {
 	switch filepath.Ext(codePath) {
 	// Golang
 	case ".go":
-		installCheck("go")
 		formatGoFiles(codePath)
 	// Shell Script
 	case ".sh":
-		installCheck("shfmt")
 		formatShellScriptFiles(codePath)
 	// HTML
 	case ".html":
-		installCheck("html-minifier")
 		formatHTMLFiles(codePath)
 	// CSS
 	case ".css":
-		installCheck("cssnano")
 		formatCSSFiles(codePath)
 	// JavaScript
 	case ".js":
-		installCheck("uglifyjs")
 		formatJSFiles(codePath)
 	// Python
 	case ".py":
@@ -110,23 +105,18 @@ func formatDirectory() {
 		switch filepath.Ext(path) {
 		// Golang
 		case ".go":
-			installCheck("go")
 			formatGoFiles(codePath)
 		// Shell Script
 		case ".sh":
-			installCheck("shfmt")
 			formatShellScriptFiles(codePath)
 		// HTML
 		case ".html":
-			installCheck("html-minifier")
 			formatHTMLFiles(codePath)
 		// CSS
 		case ".css":
-			installCheck("cssnano")
 			formatCSSFiles(codePath)
 		// JavaScript
 		case ".js":
-			installCheck("uglifyjs")
 			formatJSFiles(codePath)
 		// Python
 		case ".py":
@@ -188,30 +178,35 @@ func formatDirectory() {
 }
 
 func formatGoFiles(filePath string) {
+	installCheck("go")
 	cmd := exec.Command("go", "fmt", filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
 }
 
 func formatShellScriptFiles(filePath string) {
+	installCheck("shfmt")
 	cmd := exec.Command("shfmt", "-l -w", filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
 }
 
 func formatHTMLFiles(filePath string) {
+	installCheck("html-minifier")
 	cmd := exec.Command("html-minifier", filePath, "-o", filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
 }
 
 func formatCSSFiles(filePath string) {
+	installCheck("cssnano")
 	cmd := exec.Command("cssnano", filePath, filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
 }
 
 func formatJSFiles(filePath string) {
+	installCheck("uglifyjs")
 	cmd := exec.Command("uglifyjs", "-b", "--", filePath, "-o", filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
