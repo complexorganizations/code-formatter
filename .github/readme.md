@@ -1,43 +1,44 @@
 ### code-formatter
 
-
 ### Supported Languages
 - [Shell Script](https://github.com/mvdan/sh)
 - [Go](https://go.dev)
+- [HTML](https://github.com/kangax/html-minifier)
+- [JavaScript](https://github.com/mishoo/UglifyJS)
+- [TypeScript]()
+- [CSS](https://github.com/cssnano/cssnano)
+- [Python]()
+- [Java]()
+- [C#]()
+- [C++]()
+- [C]()
+- [TypeScript]()
+- [PHP]()
+- [Kotlin]()
+- [Ruby]()
+- [VBA]()
+- [Swift]()
+- [R]()
+- [Rust]()
+- [Scala]()
+- [Dart]()
+- [PowerShell]()
+- [Julia]()
+- [Visual Basic]()
+- [Yaml]()
 
 ---
 ### Features
-- 
-- 
-- 
-- 
+- Format, Beautify, Optimize code.
 
 ---
 ### Q&A
 
-How
-- 
-- 
-- 
-- 
+Is it necessary for me to manually install the formatters?
+- Yes
 
-Which
-- 
-- 
-- 
--
-
-Is
-- 
-- 
-- 
--
-
-How 
-- 
-- 
-- 
--
+Is it possible to get the requisite formmaters mounted automatically?
+- No
 
 ---
 ### Author

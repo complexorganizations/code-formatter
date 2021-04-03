@@ -28,12 +28,80 @@ func main() {
 
 func formatFile() {
 	switch filepath.Ext(codePath) {
+	// Golang
 	case ".go":
 		installCheck("go")
 		formatGoFiles(codePath)
-	case ".sh", ".bash":
+	// Shell Script
+	case ".sh":
 		installCheck("shfmt")
 		formatShellScriptFiles(codePath)
+	// HTML
+	case ".html":
+		installCheck("html-minifier")
+		formatHTMLFiles(codePath)
+	// CSS
+	case ".css":
+		installCheck("cssnano")
+		formatCSSFiles(codePath)
+	// JavaScript
+	case ".js":
+		installCheck("uglifyjs")
+		formatJSFiles(codePath)
+	// Python
+	case ".py":
+		//
+	// Java
+	case ".java":
+		//
+	// C++
+	case ".cpp":
+		//
+	// C
+	case ".c":
+		//
+	// TypeScript
+	case ".ts":
+		//
+	// PHP
+	case ".php":
+		//
+	// Kotlin
+	case ".kts":
+		//
+	// Ruby
+	case ".rb":
+		//
+	// Visual Basic
+	case ".vba":
+		//
+	// Swift
+	case ".swift":
+		//
+	// Rust
+	case ".rs":
+		//
+	// Scala
+	case ".scala":
+		//
+	// Dart
+	case ".dart":
+		//
+	// PowerShell
+	case ".ps1":
+		//
+	// JSON
+	case ".json":
+		//
+	// Markdown
+	case ".md":
+		//
+	// Julia
+	case ".jl":
+		//
+	// Yaml
+	case ".yaml":
+		//
 	default:
 		log.Println("Error:", codePath)
 	}
@@ -42,12 +110,80 @@ func formatFile() {
 func formatDirectory() {
 	filepath.Walk(codePath, func(path string, info os.FileInfo, err error) error {
 		switch filepath.Ext(path) {
+		// Golang
 		case ".go":
 			installCheck("go")
-			formatGoFiles(path)
-		case ".sh", ".bash":
+			formatGoFiles(codePath)
+		// Shell Script
+		case ".sh":
 			installCheck("shfmt")
 			formatShellScriptFiles(codePath)
+		// HTML
+		case ".html":
+			installCheck("html-minifier")
+			formatHTMLFiles(codePath)
+		// CSS
+		case ".css":
+			installCheck("cssnano")
+			formatCSSFiles(codePath)
+		// JavaScript
+		case ".js":
+			installCheck("uglifyjs")
+			formatJSFiles(codePath)
+		// Python
+		case ".py":
+			//
+		// Java
+		case ".java":
+			//
+		// C++
+		case ".cpp":
+			//
+		// C
+		case ".c":
+			//
+		// TypeScript
+		case ".ts":
+			//
+		// PHP
+		case ".php":
+			//
+		// Kotlin
+		case ".kts":
+			//
+		// Ruby
+		case ".rb":
+			//
+		// Visual Basic
+		case ".vba":
+			//
+		// Swift
+		case ".swift":
+			//
+		// Rust
+		case ".rs":
+			//
+		// Scala
+		case ".scala":
+			//
+		// Dart
+		case ".dart":
+			//
+		// PowerShell
+		case ".ps1":
+			//
+		// JSON
+		case ".json":
+			//
+		// Markdown
+		case ".md":
+			//
+		// Julia
+		case ".jl":
+			//
+		// Yaml
+		case ".yaml":
+			//
 		default:
 			log.Println("Error:", codePath)
 		}
@@ -63,6 +199,24 @@ func formatGoFiles(filePath string) {
 
 func formatShellScriptFiles(filePath string) {
 	cmd := exec.Command("shfmt", "-l -w", filePath)
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
+}
+
+func formatHTMLFiles(filePath string) {
+	cmd := exec.Command("html-minifier", filePath, "-o", filePath)
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
+}
+
+func formatCSSFiles(filePath string) {
+	cmd := exec.Command("cssnano", filePath, filePath)
+	cmd.Run()
+	fmt.Println("Enhancing:", filePath)
+}
+
+func formatJSFiles(filePath string) {
+	cmd := exec.Command("uglifyjs", "-b", "--", filePath, "-o", filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
 }
@@ -94,6 +248,6 @@ func commandExists(cmd string) bool {
 	if err != nil {
 		return false
 	}
-	_ = appName // Var declared and not used
+	_ = appName // variable declared and not used
 	return true
 }
