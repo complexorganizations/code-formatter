@@ -102,8 +102,6 @@ func formatFile() {
 	// Yaml
 	case ".yaml":
 		//
-	default:
-		log.Println("Error:", codePath)
 	}
 }
 
@@ -184,8 +182,6 @@ func formatDirectory() {
 		// Yaml
 		case ".yaml":
 			//
-		default:
-			log.Println("Error:", codePath)
 		}
 		return nil
 	})
