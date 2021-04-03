@@ -294,7 +294,10 @@ func formatJSONFiles(filePath string) {
 }
 
 func formatMarkdownFiles(filePath string) {
-	//
+	installCheck("mdformat")
+	cmd := exec.Command("mdformat", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatJuliaFiles(filePath string) {
