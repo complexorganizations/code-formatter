@@ -18,7 +18,7 @@
 - [VBA]()
 - [Swift](https://github.com/apple/swift-format)
 - [R]()
-- [Rust]()
+- [Rust](https://github.com/rust-lang/rustfmt)
 - [Scala]()
 - [Dart](https://dart.dev/tools/dart-format)
 - [PowerShell]()
