@@ -305,7 +305,10 @@ func formatJuliaFiles(filePath string) {
 }
 
 func formatYamlFiles(filePath string) {
-	//
+	installCheck("yamllint")
+	cmd := exec.Command("yamllint", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func installCheck(appName string) {
