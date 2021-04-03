@@ -255,7 +255,10 @@ func formatVBAFiles(filePath string) {
 }
 
 func formatSwiftFiles(filePath string) {
-	//
+	installCheck("swift-format")
+	cmd := exec.Command("swift-format", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatRustFiles(filePath string) {
