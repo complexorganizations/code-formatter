@@ -23,7 +23,6 @@
 - [Dart](https://dart.dev/tools/dart-format)
 - [PowerShell]()
 - [Julia]()
-- [Visual Basic]()
 - [Yaml]()
 
 ---
