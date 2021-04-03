@@ -15,7 +15,7 @@ jobs:
       - name: Get dependencies
         run: go get -v
       - name: Run Test
-        run: go run main.go main.go
+        run: go run . main.go
       - name: Build Test
         run: go build -v .
       - name: Run the build
