@@ -20,7 +20,7 @@
 - [R]()
 - [Rust]()
 - [Scala]()
-- [Dart]()
+- [Dart](https://dart.dev/tools/dart-format)
 - [PowerShell]()
 - [Julia]()
 - [Visual Basic]()

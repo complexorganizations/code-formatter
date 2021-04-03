@@ -273,7 +273,10 @@ func formatScalaFiles(filePath string) {
 }
 
 func formatDartFiles(filePath string) {
-	//
+	installCheck("dart")
+	cmd := exec.Command("dart", "format", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatPowerShellFiles(filePath string) {
