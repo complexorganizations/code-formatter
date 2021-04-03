@@ -224,7 +224,10 @@ func formatJavaFiles(filePath string) {
 }
 
 func formatCPPFiles(filePath string) {
-	//
+	installCheck("dotnet-format")
+	cmd := exec.Command("dotnet-format", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatCFiles(filePath string) {
