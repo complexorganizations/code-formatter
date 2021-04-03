@@ -181,35 +181,35 @@ func formatGoFiles(filePath string) {
 	installCheck("go")
 	cmd := exec.Command("go", "fmt", filePath)
 	cmd.Run()
-	fmt.Println("Enhancing:", filePath)
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatShellScriptFiles(filePath string) {
 	installCheck("shfmt")
 	cmd := exec.Command("shfmt", "-l -w", filePath)
 	cmd.Run()
-	fmt.Println("Enhancing:", filePath)
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatHTMLFiles(filePath string) {
 	installCheck("html-minifier")
 	cmd := exec.Command("html-minifier", filePath, "-o", filePath)
 	cmd.Run()
-	fmt.Println("Enhancing:", filePath)
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatCSSFiles(filePath string) {
 	installCheck("cssnano")
 	cmd := exec.Command("cssnano", filePath, filePath)
 	cmd.Run()
-	fmt.Println("Enhancing:", filePath)
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatJSFiles(filePath string) {
 	installCheck("uglifyjs")
 	cmd := exec.Command("uglifyjs", "-b", "--", filePath, "-o", filePath)
 	cmd.Run()
-	fmt.Println("Enhancing:", filePath)
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatPythonFiles(filePath string) {
@@ -229,7 +229,10 @@ func formatCFiles(filePath string) {
 }
 
 func formatTypeScriptFiles(filePath string) {
-	//
+	installCheck("gts")
+	cmd := exec.Command("gts", "fix", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatPHPFiles(filePath string) {
