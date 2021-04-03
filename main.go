@@ -33,7 +33,7 @@ func formatFile() {
 		installCheck("go")
 		formatGoFiles(codePath)
 	// Shell Script
-	case ".sh", ".bash":
+	case ".sh":
 		installCheck("shfmt")
 		formatShellScriptFiles(codePath)
 	// HTML
@@ -58,7 +58,7 @@ func formatFile() {
 	case ".cpp":
 		//
 	// C
-	case ".c", ".cats", ".cl", ".h", ".idc":
+	case ".c":
 		//
 	// TypeScript
 	case ".ts":
@@ -96,6 +96,9 @@ func formatFile() {
 	// Markdown
 	case ".md":
 		//
+	// Julia
+	case ".jl":
+		//
 	default:
 		log.Println("Error:", codePath)
 	}
@@ -109,7 +112,7 @@ func formatDirectory() {
 			installCheck("go")
 			formatGoFiles(codePath)
 		// Shell Script
-		case ".sh", ".bash":
+		case ".sh":
 			installCheck("shfmt")
 			formatShellScriptFiles(codePath)
 		// HTML
@@ -134,7 +137,7 @@ func formatDirectory() {
 		case ".cpp":
 			//
 		// C
-		case ".c", ".cats", ".cl", ".h", ".idc":
+		case ".c":
 			//
 		// TypeScript
 		case ".ts":
@@ -171,6 +174,9 @@ func formatDirectory() {
 			//
 		// Markdown
 		case ".md":
+			//
+		// Julia
+		case ".jl":
 			//
 		default:
 			log.Println("Error:", codePath)
