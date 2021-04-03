@@ -36,7 +36,7 @@ Download the latest `code-formatter` binary
 ```
 go get -v github.com/complexorganizations/code-formatter
 ```
-Format a file
+Format a specific file
 ```
 code-formatter /home/username/projects/code-folder/file.go
 ```
