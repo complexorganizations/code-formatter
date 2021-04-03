@@ -220,7 +220,7 @@ func formatPythonFiles(filePath string) {
 }
 
 func formatJavaFiles(filePath string) {
-	//
+	// https://github.com/google/google-java-format
 }
 
 func formatCPPFiles(filePath string) {
@@ -246,7 +246,7 @@ func formatPHPFiles(filePath string) {
 }
 
 func formatKotlinFiles(filePath string) {
-	//
+	// https://github.com/google/google-java-format
 }
 
 func formatRubyFiles(filePath string) {
