@@ -29,7 +29,7 @@
 
 ---
 ### Features
-- 
+- All code will be formatted automatically.
 - 
 - 
 - 
