@@ -1,6 +1,5 @@
 ### code-formatter
 
-
 ### Supported Languages
 - [Shell Script](https://github.com/mvdan/sh)
 - [Go](https://go.dev)
@@ -30,37 +29,16 @@
 
 ---
 ### Features
-- All code will be formatted automatically.
-- 
-- 
-- 
+- Format, Beautify, Optimize code.
 
 ---
 ### Q&A
 
-How
-- 
-- 
-- 
-- 
+Is it necessary for me to manually install the formatters?
+- Yes
 
-Which
-- 
-- 
-- 
--
-
-Is
-- 
-- 
-- 
--
-
-How 
-- 
-- 
-- 
--
+Is it possible to get the requisite formmaters mounted automatically?
+- No
 
 ---
 ### Author
