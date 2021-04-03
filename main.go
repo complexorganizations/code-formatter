@@ -247,7 +247,10 @@ func formatKotlinFiles(filePath string) {
 }
 
 func formatRubyFiles(filePath string) {
-	//
+	installCheck("rufo")
+	cmd := exec.Command("rufo", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatVBAFiles(filePath string) {

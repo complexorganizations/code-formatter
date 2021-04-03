@@ -14,7 +14,7 @@
 - [C]()
 - [PHP]()
 - [Kotlin]()
-- [Ruby]()
+- [Ruby](https://github.com/ruby-formatter/rufo)
 - [VBA]()
 - [Swift](https://github.com/apple/swift-format)
 - [R]()
