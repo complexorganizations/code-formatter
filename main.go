@@ -99,6 +99,9 @@ func formatFile() {
 	// Julia
 	case ".jl":
 		//
+	// Yaml
+	case ".yaml":
+		//
 	default:
 		log.Println("Error:", codePath)
 	}
@@ -177,6 +180,9 @@ func formatDirectory() {
 			//
 		// Julia
 		case ".jl":
+			//
+		// Yaml
+		case ".yaml":
 			//
 		default:
 			log.Println("Error:", codePath)
