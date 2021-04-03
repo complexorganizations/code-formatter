@@ -105,73 +105,73 @@ func formatDirectory() {
 		switch filepath.Ext(path) {
 		// Golang
 		case ".go":
-			formatGoFiles(codePath)
+			formatGoFiles(path)
 		// Shell Script
 		case ".sh":
-			formatShellScriptFiles(codePath)
+			formatShellScriptFiles(path)
 		// HTML
 		case ".html":
-			formatHTMLFiles(codePath)
+			formatHTMLFiles(path)
 		// CSS
 		case ".css":
-			formatCSSFiles(codePath)
+			formatCSSFiles(path)
 		// JavaScript
 		case ".js":
-			formatJSFiles(codePath)
+			formatJSFiles(path)
 		// Python
 		case ".py":
-			formatPythonFiles(codePath)
+			formatPythonFiles(path)
 		// Java
 		case ".java":
-			formatJavaFiles(codePath)
+			formatJavaFiles(path)
 		// C++
 		case ".cpp":
-			formatCPPFiles(codePath)
+			formatCPPFiles(path)
 		// C
 		case ".c":
-			formatCFiles(codePath)
+			formatCFiles(path)
 		// TypeScript
 		case ".ts":
-			formatTypeScriptFiles(codePath)
+			formatTypeScriptFiles(path)
 		// PHP
 		case ".php":
-			formatPHPFiles(codePath)
+			formatPHPFiles(path)
 		// Kotlin
 		case ".kts":
-			formatKotlinFiles(codePath)
+			formatKotlinFiles(path)
 		// Ruby
 		case ".rb":
-			formatRubyFiles(codePath)
+			formatRubyFiles(path)
 		// Visual Basic
 		case ".vba":
-			formatVBAFiles(codePath)
+			formatVBAFiles(path)
 		// Swift
 		case ".swift":
-			formatSwiftFiles(codePath)
+			formatSwiftFiles(path)
 		// Rust
 		case ".rs":
-			formatRustFiles(codePath)
+			formatRustFiles(path)
 		// Scala
 		case ".scala":
-			formatScalaFiles(codePath)
+			formatScalaFiles(path)
 		// Dart
 		case ".dart":
-			formatDartFiles(codePath)
+			formatDartFiles(path)
 		// PowerShell
 		case ".ps1":
-			formatPowerShellFiles(codePath)
+			formatPowerShellFiles(path)
 		// JSON
 		case ".json":
-			formatJSONFiles(codePath)
+			formatJSONFiles(path)
 		// Markdown
 		case ".md":
-			formatMarkdownFiles(codePath)
+			formatMarkdownFiles(path)
 		// Julia
 		case ".jl":
-			formatJuliaFiles(codePath)
+			formatJuliaFiles(path)
 		// Yaml
 		case ".yaml":
-			formatYamlFiles(codePath)
+			formatYamlFiles(path)
 		}
 		return nil
 	})
@@ -213,7 +213,10 @@ func formatJSFiles(filePath string) {
 }
 
 func formatPythonFiles(filePath string) {
-	//
+	installCheck("yapf")
+	cmd := exec.Command("yapf", "--in-place", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatJavaFiles(filePath string) {
