@@ -5,7 +5,7 @@
 - [Go](https://go.dev)
 - [HTML](https://github.com/kangax/html-minifier)
 - [JavaScript](https://github.com/mishoo/UglifyJS)
-- [TypeScript]()
+- [TypeScript](https://github.com/google/gts)
 - [CSS](https://github.com/cssnano/cssnano)
 - [Python]()
 - [Java]()
