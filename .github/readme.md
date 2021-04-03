@@ -32,6 +32,21 @@
 - Format, Beautify, Optimize code.
 
 ---
+### Installation
+Download the latest `code-formatter` binary
+```
+go get -v github.com/complexorganizations/code-formatter
+```
+Format a file
+```
+code-formatter /home/username/projects/code-folder/file.go
+```
+Format all code in a directory(s)
+```
+code-formatter /home/username/projects/code-folder/
+```
+
+---
 ### Q&A
 
 Is it necessary for me to manually install the formatters?
