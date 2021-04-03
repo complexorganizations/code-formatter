@@ -10,7 +10,7 @@
 - [Python](https://github.com/google/yapf)
 - [Java]()
 - [C#](https://github.com/dotnet/format)
-- [C++]()
+- [C++](https://github.com/rosshemsley/SublimeClangFormat)
 - [C]()
 - [PHP]()
 - [Kotlin]()
