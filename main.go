@@ -45,58 +45,58 @@ func formatFile() {
 		formatJSFiles(codePath)
 	// Python
 	case ".py":
-		//
+		formatPythonFiles(codePath)
 	// Java
 	case ".java":
-		//
+		formatJavaFiles(codePath)
 	// C++
 	case ".cpp":
-		//
+		formatCPPFiles(codePath)
 	// C
 	case ".c":
-		//
+		formatCFiles(codePath)
 	// TypeScript
 	case ".ts":
-		//
+		formatTypeScriptFiles(codePath)
 	// PHP
 	case ".php":
-		//
+		formatPHPFiles(codePath)
 	// Kotlin
 	case ".kts":
-		//
+		formatKotlinFiles(codePath)
 	// Ruby
 	case ".rb":
-		//
+		formatRubyFiles(codePath)
 	// Visual Basic
 	case ".vba":
-		//
+		formatVBAFiles(codePath)
 	// Swift
 	case ".swift":
-		//
+		formatSwiftFiles(codePath)
 	// Rust
 	case ".rs":
-		//
+		formatRustFiles(codePath)
 	// Scala
 	case ".scala":
-		//
+		formatScalaFiles(codePath)
 	// Dart
 	case ".dart":
-		//
+		formatDartFiles(codePath)
 	// PowerShell
 	case ".ps1":
-		//
+		formatPowerShellFiles(codePath)
 	// JSON
 	case ".json":
-		//
+		formatJSONFiles(codePath)
 	// Markdown
 	case ".md":
-		//
+		formatMarkdownFiles(codePath)
 	// Julia
 	case ".jl":
-		//
+		formatJuliaFiles(codePath)
 	// Yaml
 	case ".yaml":
-		//
+		formatYamlFiles(codePath)
 	}
 }
 
@@ -120,58 +120,58 @@ func formatDirectory() {
 			formatJSFiles(codePath)
 		// Python
 		case ".py":
-			//
+			formatPythonFiles(codePath)
 		// Java
 		case ".java":
-			//
+			formatJavaFiles(codePath)
 		// C++
 		case ".cpp":
-			//
+			formatCPPFiles(codePath)
 		// C
 		case ".c":
-			//
+			formatCFiles(codePath)
 		// TypeScript
 		case ".ts":
-			//
+			formatTypeScriptFiles(codePath)
 		// PHP
 		case ".php":
-			//
+			formatPHPFiles(codePath)
 		// Kotlin
 		case ".kts":
-			//
+			formatKotlinFiles(codePath)
 		// Ruby
 		case ".rb":
-			//
+			formatRubyFiles(codePath)
 		// Visual Basic
 		case ".vba":
-			//
+			formatVBAFiles(codePath)
 		// Swift
 		case ".swift":
-			//
+			formatSwiftFiles(codePath)
 		// Rust
 		case ".rs":
-			//
+			formatRustFiles(codePath)
 		// Scala
 		case ".scala":
-			//
+			formatScalaFiles(codePath)
 		// Dart
 		case ".dart":
-			//
+			formatDartFiles(codePath)
 		// PowerShell
 		case ".ps1":
-			//
+			formatPowerShellFiles(codePath)
 		// JSON
 		case ".json":
-			//
+			formatJSONFiles(codePath)
 		// Markdown
 		case ".md":
-			//
+			formatMarkdownFiles(codePath)
 		// Julia
 		case ".jl":
-			//
+			formatJuliaFiles(codePath)
 		// Yaml
 		case ".yaml":
-			//
+			formatYamlFiles(codePath)
 		}
 		return nil
 	})
@@ -210,6 +210,78 @@ func formatJSFiles(filePath string) {
 	cmd := exec.Command("uglifyjs", "-b", "--", filePath, "-o", filePath)
 	cmd.Run()
 	fmt.Println("Enhancing:", filePath)
+}
+
+func formatPythonFiles(filePath string) {
+	//
+}
+
+func formatJavaFiles(filePath string) {
+	//
+}
+
+func formatCPPFiles(filePath string) {
+	//
+}
+
+func formatCFiles(filePath string) {
+	//
+}
+
+func formatTypeScriptFiles(filePath string) {
+	//
+}
+
+func formatPHPFiles(filePath string) {
+	//
+}
+
+func formatKotlinFiles(filePath string) {
+	//
+}
+
+func formatRubyFiles(filePath string) {
+	//
+}
+
+func formatVBAFiles(filePath string) {
+	//
+}
+
+func formatSwiftFiles(filePath string) {
+	//
+}
+
+func formatRustFiles(filePath string) {
+	//
+}
+
+func formatScalaFiles(filePath string) {
+	//
+}
+
+func formatDartFiles(filePath string) {
+	//
+}
+
+func formatPowerShellFiles(filePath string) {
+	//
+}
+
+func formatJSONFiles(filePath string) {
+	//
+}
+
+func formatMarkdownFiles(filePath string) {
+	//
+}
+
+func formatJuliaFiles(filePath string) {
+	//
+}
+
+func formatYamlFiles(filePath string) {
+	//
 }
 
 func installCheck(appName string) {
