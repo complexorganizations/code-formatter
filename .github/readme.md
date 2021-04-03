@@ -12,7 +12,6 @@
 - [C#]()
 - [C++]()
 - [C]()
-- [TypeScript]()
 - [PHP]()
 - [Kotlin]()
 - [Ruby]()
