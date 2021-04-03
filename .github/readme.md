@@ -23,7 +23,7 @@
 - [Dart](https://dart.dev/tools/dart-format)
 - [PowerShell]()
 - [Julia]()
-- [Yaml]()
+- [Yaml](https://github.com/adrienverge/yamllint)
 - [Markdown](https://github.com/executablebooks/mdformat)
 
 ---
