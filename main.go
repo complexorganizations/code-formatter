@@ -220,7 +220,10 @@ func formatPythonFiles(filePath string) {
 }
 
 func formatJavaFiles(filePath string) {
-	// https://github.com/google/google-java-format
+	installCheck("google-java-format")
+	cmd := exec.Command("google-java-format", "--replace", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatCPPFiles(filePath string) {
