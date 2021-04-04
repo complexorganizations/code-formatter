@@ -275,7 +275,10 @@ func formatRustFiles(filePath string) {
 }
 
 func formatScalaFiles(filePath string) {
-	//
+	installCheck("scalafmt")
+	cmd := exec.Command("scalafmt", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatDartFiles(filePath string) {

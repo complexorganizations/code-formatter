@@ -19,7 +19,7 @@
 - [Swift](https://github.com/apple/swift-format)
 - [R]()
 - [Rust](https://github.com/rust-lang/rustfmt)
-- [Scala]()
+- [Scala](https://github.com/scalameta/scalafmt)
 - [Dart](https://dart.dev/tools/dart-format)
 - [PowerShell]()
 - [Julia]()
