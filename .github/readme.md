@@ -15,7 +15,6 @@
 - [PHP](https://github.com/cmrcx/phptidy)
 - [Kotlin](https://github.com/pinterest/ktlint)
 - [Ruby](https://github.com/ruby-formatter/rufo)
-- [VBA]()
 - [Swift](https://github.com/apple/swift-format)
 - [R]()
 - [Rust](https://github.com/rust-lang/rustfmt)
