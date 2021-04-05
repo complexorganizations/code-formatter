@@ -31,7 +31,7 @@ func formatFile() {
 	case ".go":
 		formatGoFiles(codePath)
 	// Shell Script
-	case ".sh":
+	case ".sh", ".bash":
 		formatShellScriptFiles(codePath)
 	// HTML
 	case ".html":
