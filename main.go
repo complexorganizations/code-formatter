@@ -375,7 +375,7 @@ func installCheck(appName string) {
 	}
 }
 
-// Directory Check 
+// Directory Check
 func folderExists(foldername string) bool {
 	info, err := os.Stat(foldername)
 	if os.IsNotExist(err) {
