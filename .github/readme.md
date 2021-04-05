@@ -11,7 +11,7 @@
 - [Java](https://github.com/google/google-java-format)
 - [C#](https://github.com/dotnet/format)
 - [C++](https://github.com/llvm-mirror/clang)
-- [C]()
+- [C](https://github.com/llvm-mirror/clang)
 - [PHP]()
 - [Kotlin](https://github.com/pinterest/ktlint)
 - [Ruby](https://github.com/ruby-formatter/rufo)
