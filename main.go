@@ -234,7 +234,10 @@ func formatCPPFiles(filePath string) {
 }
 
 func formatCFiles(filePath string) {
-	//
+	installCheck("clang-format")
+	installCheck("clang-format", "-style=Google", "-i", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatTypeScriptFiles(filePath string) {
