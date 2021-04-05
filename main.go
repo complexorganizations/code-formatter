@@ -247,15 +247,18 @@ func formatJavaFiles(filePath string) {
 
 // C++
 func formatCPPFiles(filePath string) {
-	installCheck("dotnet-format")
-	cmd := exec.Command("dotnet-format", filePath)
+	installCheck("clang-format")
+	cmd := exec.Command("clang-format", "-style=Google", "-i", filePath)
 	cmd.Run()
 	fmt.Println("Optimizing:", filePath)
 }
 
 // C##
 func formatCSFiles(filePath string) {
-	//
+	installCheck("dotnet-format")
+	cmd := exec.Command("dotnet-format", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 // C
