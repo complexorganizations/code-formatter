@@ -13,7 +13,7 @@
 - [C++](https://github.com/llvm-mirror/clang)
 - [C]()
 - [PHP]()
-- [Kotlin]()
+- [Kotlin](https://github.com/pinterest/ktlint)
 - [Ruby](https://github.com/ruby-formatter/rufo)
 - [VBA]()
 - [Swift](https://github.com/apple/swift-format)
