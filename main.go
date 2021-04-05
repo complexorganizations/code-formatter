@@ -101,75 +101,75 @@ func formatFile() {
 
 func formatDirectory() {
 	filepath.Walk(codePath, func(path string, info os.FileInfo, err error) error {
-		switch filepath.Ext(codePath) {
+		switch filepath.Ext(path) {
 		// Golang
 		case ".go":
-			formatGoFiles(codePath)
+			formatGoFiles(path)
 		// Shell Script
 		case ".sh":
-			formatShellScriptFiles(codePath)
+			formatShellScriptFiles(path)
 		// HTML
 		case ".html":
-			formatHTMLFiles(codePath)
+			formatHTMLFiles(path)
 		// CSS
 		case ".css":
-			formatCSSFiles(codePath)
+			formatCSSFiles(path)
 		// JavaScript
 		case ".js":
-			formatJSFiles(codePath)
+			formatJSFiles(path)
 		// TypeScript
 		case ".ts":
-			formatTypeScriptFiles(codePath)
+			formatTypeScriptFiles(path)
 		// Python
 		case ".py":
-			formatPythonFiles(codePath)
+			formatPythonFiles(path)
 		// Java
 		case ".java":
-			formatJavaFiles(codePath)
+			formatJavaFiles(path)
 		// c##
 		case ".cs":
-			formatCSFiles(codePath)
+			formatCSFiles(path)
 		// C++
 		case ".cpp":
-			formatCPPFiles(codePath)
+			formatCPPFiles(path)
 		// C
 		case ".c":
-			formatCFiles(codePath)
+			formatCFiles(path)
 		// PHP
 		case ".php":
-			formatPHPFiles(codePath)
+			formatPHPFiles(path)
 		// Kotlin
 		case ".kts":
-			formatKotlinFiles(codePath)
+			formatKotlinFiles(path)
 		// Ruby
 		case ".rb":
-			formatRubyFiles(codePath)
+			formatRubyFiles(path)
 		// Swift
 		case ".swift":
-			formatSwiftFiles(codePath)
+			formatSwiftFiles(path)
 		// Rust
 		case ".rs":
-			formatRustFiles(codePath)
+			formatRustFiles(path)
 		// Scala
 		case ".scala":
-			formatScalaFiles(codePath)
+			formatScalaFiles(path)
 		// Dart
 		case ".dart":
-			formatDartFiles(codePath)
+			formatDartFiles(path)
 		// PowerShell
 		case ".ps1":
-			formatPowerShellFiles(codePath)
+			formatPowerShellFiles(path)
 		// Yaml
 		case ".yaml":
-			formatYamlFiles(codePath)
+			formatYamlFiles(path)
 		// JSON
 		case ".json":
-			formatJSONFiles(codePath)
+			formatJSONFiles(path)
 		// Markdown
 		case ".md":
-			formatMarkdownFiles(codePath)
+			formatMarkdownFiles(path)
 		default:
-			log.Println("Error:", codePath)
+			log.Println("Error:", path)
 		}
 		return nil
 	})
