@@ -25,6 +25,7 @@
 - [Julia]()
 - [Yaml](https://github.com/adrienverge/yamllint)
 - [Markdown](https://github.com/executablebooks/mdformat)
+- [JSON](https://github.com/kobylin/format-json)
 
 ---
 ### Features
