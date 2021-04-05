@@ -273,7 +273,10 @@ func formatTypeScriptFiles(filePath string) {
 
 // PHP
 func formatPHPFiles(filePath string) {
-	//
+	installCheck("phptidy")
+	cmd := exec.Command("phptidy", "replace", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 // Kotlin
