@@ -12,7 +12,7 @@
 - [C#](https://github.com/dotnet/format)
 - [C++](https://github.com/llvm-mirror/clang)
 - [C](https://github.com/llvm-mirror/clang)
-- [PHP]()
+- [PHP](https://github.com/cmrcx/phptidy)
 - [Kotlin](https://github.com/pinterest/ktlint)
 - [Ruby](https://github.com/ruby-formatter/rufo)
 - [VBA]()
