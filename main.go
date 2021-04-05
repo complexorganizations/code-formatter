@@ -43,21 +43,24 @@ func formatFile() {
 	// JavaScript
 	case ".js":
 		formatJSFiles(codePath)
+	// TypeScript
+	case ".ts":
+		formatTypeScriptFiles(codePath)
 	// Python
 	case ".py":
 		formatPythonFiles(codePath)
 	// Java
 	case ".java":
 		formatJavaFiles(codePath)
+	// c##
+	case ".cs":
+		formatCSFiles(codePath)
 	// C++
 	case ".cpp":
 		formatCPPFiles(codePath)
 	// C
 	case ".c":
 		formatCFiles(codePath)
-	// TypeScript
-	case ".ts":
-		formatTypeScriptFiles(codePath)
 	// PHP
 	case ".php":
 		formatPHPFiles(codePath)
@@ -73,6 +76,9 @@ func formatFile() {
 	// Swift
 	case ".swift":
 		formatSwiftFiles(codePath)
+	// R
+	case ".r":
+		formatRFiles(codePath)
 	// Rust
 	case ".rs":
 		formatRustFiles(codePath)
@@ -85,93 +91,99 @@ func formatFile() {
 	// PowerShell
 	case ".ps1":
 		formatPowerShellFiles(codePath)
-	// JSON
-	case ".json":
-		formatJSONFiles(codePath)
-	// Markdown
-	case ".md":
-		formatMarkdownFiles(codePath)
 	// Julia
 	case ".jl":
 		formatJuliaFiles(codePath)
 	// Yaml
 	case ".yaml":
 		formatYamlFiles(codePath)
+	// JSON
+	case ".json":
+		formatJSONFiles(codePath)
+	// Markdown
+	case ".md":
+		formatMarkdownFiles(codePath)
 	}
 }
 
 func formatDirectory() {
 	filepath.Walk(codePath, func(path string, info os.FileInfo, err error) error {
-		switch filepath.Ext(path) {
+		switch filepath.Ext(codePath) {
 		// Golang
 		case ".go":
-			formatGoFiles(path)
+			formatGoFiles(codePath)
 		// Shell Script
 		case ".sh":
-			formatShellScriptFiles(path)
+			formatShellScriptFiles(codePath)
 		// HTML
 		case ".html":
-			formatHTMLFiles(path)
+			formatHTMLFiles(codePath)
 		// CSS
 		case ".css":
-			formatCSSFiles(path)
+			formatCSSFiles(codePath)
 		// JavaScript
 		case ".js":
-			formatJSFiles(path)
-		// Python
-		case ".py":
-			formatPythonFiles(path)
-		// Java
-		case ".java":
-			formatJavaFiles(path)
-		// C++
-		case ".cpp":
-			formatCPPFiles(path)
-		// C
-		case ".c":
-			formatCFiles(path)
+			formatJSFiles(codePath)
 		// TypeScript
 		case ".ts":
-			formatTypeScriptFiles(path)
+			formatTypeScriptFiles(codePath)
+		// Python
+		case ".py":
+			formatPythonFiles(codePath)
+		// Java
+		case ".java":
+			formatJavaFiles(codePath)
+		// c##
+		case ".cs":
+			formatCSFiles(codePath)
+		// C++
+		case ".cpp":
+			formatCPPFiles(codePath)
+		// C
+		case ".c":
+			formatCFiles(codePath)
 		// PHP
 		case ".php":
-			formatPHPFiles(path)
+			formatPHPFiles(codePath)
 		// Kotlin
 		case ".kts":
-			formatKotlinFiles(path)
+			formatKotlinFiles(codePath)
 		// Ruby
 		case ".rb":
-			formatRubyFiles(path)
+			formatRubyFiles(codePath)
 		// Visual Basic
 		case ".vba":
-			formatVBAFiles(path)
+			formatVBAFiles(codePath)
 		// Swift
 		case ".swift":
-			formatSwiftFiles(path)
+			formatSwiftFiles(codePath)
+		// R
+		case ".r":
+			formatRFiles(codePath)
 		// Rust
 		case ".rs":
-			formatRustFiles(path)
+			formatRustFiles(codePath)
 		// Scala
 		case ".scala":
-			formatScalaFiles(path)
+			formatScalaFiles(codePath)
 		// Dart
 		case ".dart":
-			formatDartFiles(path)
+			formatDartFiles(codePath)
 		// PowerShell
 		case ".ps1":
-			formatPowerShellFiles(path)
-		// JSON
-		case ".json":
-			formatJSONFiles(path)
-		// Markdown
-		case ".md":
-			formatMarkdownFiles(path)
+			formatPowerShellFiles(codePath)
 		// Julia
 		case ".jl":
-			formatJuliaFiles(path)
+			formatJuliaFiles(codePath)
 		// Yaml
 		case ".yaml":
-			formatYamlFiles(path)
+			formatYamlFiles(codePath)
+		// JSON
+		case ".json":
+			formatJSONFiles(codePath)
+		// Markdown
+		case ".md":
+			formatMarkdownFiles(codePath)
 		}
 		return nil
 	})
@@ -233,6 +245,10 @@ func formatCPPFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+func formatCSFiles(filePath string) {
+	//
+}
+
 func formatCFiles(filePath string) {
 	installCheck("clang-format")
 	cmd := exec.Command("clang-format", "-style=Google", "-i", filePath)
@@ -271,6 +287,10 @@ func formatSwiftFiles(filePath string) {
 	cmd := exec.Command("swift-format", filePath)
 	cmd.Run()
 	fmt.Println("Optimizing:", filePath)
+}
+
+func formatRFiles(filePath string) {
+	//
 }
 
 func formatRustFiles(filePath string) {
