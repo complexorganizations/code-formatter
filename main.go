@@ -339,7 +339,10 @@ func formatDartFiles(filePath string) {
 
 // PowerShell
 func formatPowerShellFiles(filePath string) {
-	//
+	installCheck("Edit-DTWBeautifyScript")
+	cmd := exec.Command("Edit-DTWBeautifyScript", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 // JSON
