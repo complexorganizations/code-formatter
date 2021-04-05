@@ -91,9 +91,6 @@ func formatFile() {
 	// PowerShell
 	case ".ps1":
 		formatPowerShellFiles(codePath)
-	// Julia
-	case ".jl":
-		formatJuliaFiles(codePath)
 	// Yaml
 	case ".yaml":
 		formatYamlFiles(codePath)
@@ -172,9 +169,6 @@ func formatDirectory() {
 		// PowerShell
 		case ".ps1":
 			formatPowerShellFiles(codePath)
-		// Julia
-		case ".jl":
-			formatJuliaFiles(codePath)
 		// Yaml
 		case ".yaml":
 			formatYamlFiles(codePath)
@@ -359,11 +353,6 @@ func formatMarkdownFiles(filePath string) {
 	cmd := exec.Command("mdformat", filePath)
 	cmd.Run()
 	fmt.Println("Optimizing:", filePath)
-}
-
-// Julia
-func formatJuliaFiles(filePath string) {
-	//
 }
 
 // Yaml
