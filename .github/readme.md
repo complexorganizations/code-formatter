@@ -16,7 +16,6 @@
 - [Kotlin](https://github.com/pinterest/ktlint)
 - [Ruby](https://github.com/ruby-formatter/rufo)
 - [Swift](https://github.com/apple/swift-format)
-- [R]()
 - [Rust](https://github.com/rust-lang/rustfmt)
 - [Scala](https://github.com/scalameta/scalafmt)
 - [Dart](https://dart.dev/tools/dart-format)
