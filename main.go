@@ -73,9 +73,6 @@ func formatFile() {
 	// Swift
 	case ".swift":
 		formatSwiftFiles(codePath)
-	// R
-	case ".r":
-		formatRFiles(codePath)
 	// Rust
 	case ".rs":
 		formatRustFiles(codePath)
@@ -148,9 +145,6 @@ func formatDirectory() {
 		// Swift
 		case ".swift":
 			formatSwiftFiles(codePath)
-		// R
-		case ".r":
-			formatRFiles(codePath)
 		// Rust
 		case ".rs":
 			formatRustFiles(codePath)
@@ -295,11 +289,6 @@ func formatSwiftFiles(filePath string) {
 	cmd := exec.Command("swift-format", filePath)
 	cmd.Run()
 	fmt.Println("Optimizing:", filePath)
-}
-
-// R
-func formatRFiles(filePath string) {
-	//
 }
 
 // Rust
