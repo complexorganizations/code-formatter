@@ -281,7 +281,10 @@ func formatPHPFiles(filePath string) {
 
 // Kotlin
 func formatKotlinFiles(filePath string) {
-	//
+	installCheck("ktlint")
+	cmd := exec.Command("ktlint", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 // Ruby
