@@ -299,7 +299,10 @@ func formatPowerShellFiles(filePath string) {
 }
 
 func formatJSONFiles(filePath string) {
-	//
+	installCheck("json-format")
+	cmd := exec.Command("json-format", filePath)
+	cmd.Run()
+	fmt.Println("Optimizing:", filePath)
 }
 
 func formatMarkdownFiles(filePath string) {
