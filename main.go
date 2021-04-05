@@ -189,6 +189,7 @@ func formatDirectory() {
 	})
 }
 
+// Golang
 func formatGoFiles(filePath string) {
 	installCheck("go")
 	cmd := exec.Command("go", "fmt", filePath)
@@ -196,6 +197,7 @@ func formatGoFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// Shell Script
 func formatShellScriptFiles(filePath string) {
 	installCheck("shfmt")
 	cmd := exec.Command("shfmt", "-l -w", filePath)
@@ -203,6 +205,7 @@ func formatShellScriptFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// HTML
 func formatHTMLFiles(filePath string) {
 	installCheck("html-minifier")
 	cmd := exec.Command("html-minifier", filePath, "-o", filePath)
@@ -210,6 +213,7 @@ func formatHTMLFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// CSS
 func formatCSSFiles(filePath string) {
 	installCheck("cssnano")
 	cmd := exec.Command("cssnano", filePath, filePath)
@@ -217,6 +221,7 @@ func formatCSSFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// JS
 func formatJSFiles(filePath string) {
 	installCheck("uglifyjs")
 	cmd := exec.Command("uglifyjs", "-b", "--", filePath, "-o", filePath)
@@ -224,6 +229,7 @@ func formatJSFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// Python
 func formatPythonFiles(filePath string) {
 	installCheck("yapf")
 	cmd := exec.Command("yapf", "--in-place", filePath)
@@ -231,6 +237,7 @@ func formatPythonFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// Java
 func formatJavaFiles(filePath string) {
 	installCheck("google-java-format")
 	cmd := exec.Command("google-java-format", "--replace", filePath)
@@ -238,6 +245,7 @@ func formatJavaFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// C++
 func formatCPPFiles(filePath string) {
 	installCheck("dotnet-format")
 	cmd := exec.Command("dotnet-format", filePath)
@@ -245,10 +253,12 @@ func formatCPPFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// C##
 func formatCSFiles(filePath string) {
 	//
 }
 
+// C
 func formatCFiles(filePath string) {
 	installCheck("clang-format")
 	cmd := exec.Command("clang-format", "-style=Google", "-i", filePath)
@@ -256,6 +266,7 @@ func formatCFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// TypeScript
 func formatTypeScriptFiles(filePath string) {
 	installCheck("gts")
 	cmd := exec.Command("gts", "fix", filePath)
@@ -263,14 +274,17 @@ func formatTypeScriptFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// PHP
 func formatPHPFiles(filePath string) {
 	//
 }
 
+// Kotlin
 func formatKotlinFiles(filePath string) {
 	//
 }
 
+// Ruby
 func formatRubyFiles(filePath string) {
 	installCheck("rufo")
 	cmd := exec.Command("rufo", filePath)
@@ -278,10 +292,12 @@ func formatRubyFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// VBA
 func formatVBAFiles(filePath string) {
 	//
 }
 
+// Swift
 func formatSwiftFiles(filePath string) {
 	installCheck("swift-format")
 	cmd := exec.Command("swift-format", filePath)
@@ -289,10 +305,12 @@ func formatSwiftFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// R
 func formatRFiles(filePath string) {
 	//
 }
 
+// Rust
 func formatRustFiles(filePath string) {
 	installCheck("rustfmt")
 	cmd := exec.Command("rustfmt", filePath)
@@ -300,6 +318,7 @@ func formatRustFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// Scala
 func formatScalaFiles(filePath string) {
 	installCheck("scalafmt")
 	cmd := exec.Command("scalafmt", filePath)
@@ -307,6 +326,7 @@ func formatScalaFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// Dart
 func formatDartFiles(filePath string) {
 	installCheck("dart")
 	cmd := exec.Command("dart", "format", filePath)
@@ -314,10 +334,12 @@ func formatDartFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// PowerShell
 func formatPowerShellFiles(filePath string) {
 	//
 }
 
+// JSON
 func formatJSONFiles(filePath string) {
 	installCheck("json-format")
 	cmd := exec.Command("json-format", filePath)
@@ -325,6 +347,7 @@ func formatJSONFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// Markdown
 func formatMarkdownFiles(filePath string) {
 	installCheck("mdformat")
 	cmd := exec.Command("mdformat", filePath)
@@ -332,10 +355,12 @@ func formatMarkdownFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// Julia
 func formatJuliaFiles(filePath string) {
 	//
 }
 
+// Yaml
 func formatYamlFiles(filePath string) {
 	installCheck("yamllint")
 	cmd := exec.Command("yamllint", filePath)
@@ -343,12 +368,14 @@ func formatYamlFiles(filePath string) {
 	fmt.Println("Optimizing:", filePath)
 }
 
+// Application Check
 func installCheck(appName string) {
 	if !commandExists(appName) {
 		log.Fatalf("The application %s was not found in the system. \n", appName)
 	}
 }
 
+// Directory Check 
 func folderExists(foldername string) bool {
 	info, err := os.Stat(foldername)
 	if os.IsNotExist(err) {
@@ -357,6 +384,7 @@ func folderExists(foldername string) bool {
 	return info.IsDir()
 }
 
+// File Check
 func fileExists(filename string) bool {
 	info, err := os.Stat(filename)
 	if os.IsNotExist(err) {
@@ -365,6 +393,7 @@ func fileExists(filename string) bool {
 	return !info.IsDir()
 }
 
+// Application Check
 func commandExists(cmd string) bool {
 	appName, err := exec.LookPath(cmd)
 	if err != nil {
