@@ -70,9 +70,6 @@ func formatFile() {
 	// Ruby
 	case ".rb":
 		formatRubyFiles(codePath)
-	// Visual Basic
-	case ".vba":
-		formatVBAFiles(codePath)
 	// Swift
 	case ".swift":
 		formatSwiftFiles(codePath)
@@ -148,9 +145,6 @@ func formatDirectory() {
 		// Ruby
 		case ".rb":
 			formatRubyFiles(codePath)
-		// Visual Basic
-		case ".vba":
-			formatVBAFiles(codePath)
 		// Swift
 		case ".swift":
 			formatSwiftFiles(codePath)
@@ -293,11 +287,6 @@ func formatRubyFiles(filePath string) {
 	cmd := exec.Command("rufo", filePath)
 	cmd.Run()
 	fmt.Println("Optimizing:", filePath)
-}
-
-// VBA
-func formatVBAFiles(filePath string) {
-	//
 }
 
 // Swift
