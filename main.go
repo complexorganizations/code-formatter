@@ -252,7 +252,7 @@ func formatPHPFiles(filePath string) {
 }
 
 func formatKotlinFiles(filePath string) {
-	// https://github.com/google/google-java-format
+	//
 }
 
 func formatRubyFiles(filePath string) {
