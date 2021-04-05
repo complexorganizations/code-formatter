@@ -94,6 +94,8 @@ func formatFile() {
 	// Markdown
 	case ".md":
 		formatMarkdownFiles(codePath)
+	default:
+		log.Println("Error:", codePath)
 	}
 }
 
@@ -166,6 +168,8 @@ func formatDirectory() {
 		// Markdown
 		case ".md":
 			formatMarkdownFiles(codePath)
+		default:
+			log.Println("Error:", codePath)
 		}
 		return nil
 	})
