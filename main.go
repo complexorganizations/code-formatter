@@ -13,7 +13,7 @@ func init() {
 	if len(os.Args) > 1 {
 		codePath = os.Args[1]
 	} else {
-		os.Exit(0)
+		log.Fatal("Error: no arguments passed")
 	}
 }
 
