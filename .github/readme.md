@@ -36,16 +36,15 @@ go get -v github.com/complexorganizations/code-formatter
 ```
 Format a specific file
 ```
-code-formatter /home/username/projects/code-folder/file.go
+code-formatter -path=/home/username/projects/code-folder/file.go
 ```
 Format all code in a directory(s)
 ```
-code-formatter /home/username/projects/code-folder/
+code-formatter -path=/home/username/projects/code-folder/
 ```
 
 ---
 ### Q&A
-
 Is it necessary for me to manually install the formatters?
 - Yes
 
