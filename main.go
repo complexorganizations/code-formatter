@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"os"
 	"os/exec"
@@ -11,9 +12,15 @@ var codePath string
 
 func init() {
 	if len(os.Args) > 1 {
-		codePath = os.Args[1]
+		tempCodePath := flag.String("path", "example", "The file's location in the system.")
+		flag.Parse()
+		codePath = *tempCodePath
 	} else {
-		log.Fatal("Error: no arguments passed")
+		log.Fatal("Error: The system path has not been given.")
+	}
+	// System path
+	if codePath == "" {
+		log.Fatal("Error: The system path has not been given.")
 	}
 }
 
