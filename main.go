@@ -15,14 +15,14 @@ var (
 
 func init() {
 	if len(os.Args) > 1 {
-		tempCodePath := flag.String("path", "example", "The file's location in the system.")
+		tempCodePath := flag.String("path", "/user/example/folder/file", "The file's location in the system.")
 		flag.Parse()
 		codePath = *tempCodePath
 	} else {
 		log.Fatal("Error: The system path has not been given.")
 	}
 	// System path
-	if codePath == "" {
+	if codePath == "" || codePath == "/user/example/folder/file" {
 		log.Fatal("Error: The system path has not been given.")
 	}
 }
