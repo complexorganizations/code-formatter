@@ -416,10 +416,11 @@ func commandExists(cmd string) bool {
 	if err != nil {
 		return false
 	}
-	_ = appName // variable declared and not used
+	_ = appName
 	return true
 }
 
+// Handle errors
 func handleErrors(err error) {
 	if err != nil {
 		log.Println(err)
