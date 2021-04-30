@@ -28,9 +28,12 @@ func init() {
 }
 
 func main() {
+	// Format a single file
 	if fileExists(codePath) {
 		formatFile()
-	} else if folderExists(codePath) {
+	}
+	// Format a whole folder
+	if folderExists(codePath) {
 		formatDirectory()
 	}
 }
