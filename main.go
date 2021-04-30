@@ -8,7 +8,10 @@ import (
 	"path/filepath"
 )
 
-var codePath string
+var (
+	codePath string
+	err      error
+)
 
 func init() {
 	if len(os.Args) > 1 {
@@ -185,7 +188,8 @@ func formatDirectory() {
 func formatGoFiles(filePath string) {
 	installCheck("go")
 	cmd := exec.Command("go", "fmt", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -193,7 +197,8 @@ func formatGoFiles(filePath string) {
 func formatShellScriptFiles(filePath string) {
 	installCheck("shfmt")
 	cmd := exec.Command("shfmt", "-l -w", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -201,7 +206,8 @@ func formatShellScriptFiles(filePath string) {
 func formatHTMLFiles(filePath string) {
 	installCheck("html-minifier")
 	cmd := exec.Command("html-minifier", filePath, "-o", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -209,7 +215,8 @@ func formatHTMLFiles(filePath string) {
 func formatCSSFiles(filePath string) {
 	installCheck("cssnano")
 	cmd := exec.Command("cssnano", filePath, filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -217,7 +224,8 @@ func formatCSSFiles(filePath string) {
 func formatJSFiles(filePath string) {
 	installCheck("uglifyjs")
 	cmd := exec.Command("uglifyjs", "-b", "--", filePath, "-o", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -225,7 +233,8 @@ func formatJSFiles(filePath string) {
 func formatPythonFiles(filePath string) {
 	installCheck("yapf")
 	cmd := exec.Command("yapf", "--in-place", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -233,7 +242,8 @@ func formatPythonFiles(filePath string) {
 func formatJavaFiles(filePath string) {
 	installCheck("google-java-format")
 	cmd := exec.Command("google-java-format", "--replace", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -241,7 +251,8 @@ func formatJavaFiles(filePath string) {
 func formatCPPFiles(filePath string) {
 	installCheck("clang-format")
 	cmd := exec.Command("clang-format", "-style=Google", "-i", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -249,7 +260,8 @@ func formatCPPFiles(filePath string) {
 func formatCSFiles(filePath string) {
 	installCheck("dotnet-format")
 	cmd := exec.Command("dotnet-format", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -257,7 +269,8 @@ func formatCSFiles(filePath string) {
 func formatCFiles(filePath string) {
 	installCheck("clang-format")
 	cmd := exec.Command("clang-format", "-style=Google", "-i", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -265,7 +278,8 @@ func formatCFiles(filePath string) {
 func formatTypeScriptFiles(filePath string) {
 	installCheck("gts")
 	cmd := exec.Command("gts", "fix", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -273,7 +287,8 @@ func formatTypeScriptFiles(filePath string) {
 func formatPHPFiles(filePath string) {
 	installCheck("phptidy")
 	cmd := exec.Command("phptidy", "replace", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -281,7 +296,8 @@ func formatPHPFiles(filePath string) {
 func formatKotlinFiles(filePath string) {
 	installCheck("ktlint")
 	cmd := exec.Command("ktlint", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -289,7 +305,8 @@ func formatKotlinFiles(filePath string) {
 func formatRubyFiles(filePath string) {
 	installCheck("rufo")
 	cmd := exec.Command("rufo", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -297,7 +314,8 @@ func formatRubyFiles(filePath string) {
 func formatSwiftFiles(filePath string) {
 	installCheck("swift-format")
 	cmd := exec.Command("swift-format", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -305,7 +323,8 @@ func formatSwiftFiles(filePath string) {
 func formatRustFiles(filePath string) {
 	installCheck("rustfmt")
 	cmd := exec.Command("rustfmt", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -313,7 +332,8 @@ func formatRustFiles(filePath string) {
 func formatScalaFiles(filePath string) {
 	installCheck("scalafmt")
 	cmd := exec.Command("scalafmt", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -321,7 +341,8 @@ func formatScalaFiles(filePath string) {
 func formatDartFiles(filePath string) {
 	installCheck("dart")
 	cmd := exec.Command("dart", "format", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -329,7 +350,8 @@ func formatDartFiles(filePath string) {
 func formatPowerShellFiles(filePath string) {
 	installCheck("Edit-DTWBeautifyScript")
 	cmd := exec.Command("Edit-DTWBeautifyScript", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -337,7 +359,8 @@ func formatPowerShellFiles(filePath string) {
 func formatJSONFiles(filePath string) {
 	installCheck("json-format")
 	cmd := exec.Command("json-format", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -345,7 +368,8 @@ func formatJSONFiles(filePath string) {
 func formatMarkdownFiles(filePath string) {
 	installCheck("mdformat")
 	cmd := exec.Command("mdformat", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -353,7 +377,8 @@ func formatMarkdownFiles(filePath string) {
 func formatYamlFiles(filePath string) {
 	installCheck("yamllint")
 	cmd := exec.Command("yamllint", filePath)
-	cmd.Run()
+	err = cmd.Run()
+	handleErrors(err)
 	log.Println("Optimizing:", filePath)
 }
 
@@ -390,4 +415,10 @@ func commandExists(cmd string) bool {
 	}
 	_ = appName // variable declared and not used
 	return true
+}
+
+func handleErrors(err error) {
+	if err != nil {
+		log.Println(err)
+	}
 }
