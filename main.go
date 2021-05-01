@@ -388,7 +388,7 @@ func formatYamlFiles(filePath string) {
 // Application Check
 func installCheck(appName string) {
 	if !commandExists(appName) {
-		log.Fatalf("The application %s was not found in the system. \n", appName)
+		log.Printf("The application %s was not found in the system. \n", appName)
 	}
 }
 
