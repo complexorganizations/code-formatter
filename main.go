@@ -28,12 +28,11 @@ func init() {
 }
 
 func main() {
-	// Format a single file
 	if fileExists(codePath) {
+		// Format a single file
 		formatFile()
-	}
-	// Format a whole folder
-	if folderExists(codePath) {
+	} else if folderExists(codePath) {
+		// Format a whole folder
 		formatDirectory()
 	}
 }
