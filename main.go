@@ -22,7 +22,7 @@ func init() {
 		log.Fatal("Error: The system path has not been given.")
 	}
 	// System path
-	if codePath == "" || codePath == "/user/example/folder/file" {
+	if len(codePath) < 1 || codePath == "/user/example/folder/file" {
 		log.Fatal("Error: The system path has not been given.")
 	}
 }
