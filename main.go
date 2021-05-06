@@ -34,6 +34,8 @@ func main() {
 	} else if folderExists(codePath) {
 		// Format a whole folder
 		formatDirectory()
+	} else {
+		log.Fatal("Error: The machine direction is invalid.")
 	}
 }
 
