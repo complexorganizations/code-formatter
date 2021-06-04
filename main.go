@@ -192,7 +192,7 @@ func formatDirectory() {
 
 // Golang
 func formatGoFiles(filePath string) {
-	installCheck("go")
+	commandExists("go")
 	cmd := exec.Command("go", "fmt", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -201,7 +201,7 @@ func formatGoFiles(filePath string) {
 
 // Shell Script
 func formatShellScriptFiles(filePath string) {
-	installCheck("shfmt")
+	commandExists("shfmt")
 	cmd := exec.Command("shfmt", "-l -w", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -210,7 +210,7 @@ func formatShellScriptFiles(filePath string) {
 
 // HTML
 func formatHTMLFiles(filePath string) {
-	installCheck("html-minifier")
+	commandExists("html-minifier")
 	cmd := exec.Command("html-minifier", filePath, "-o", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -219,7 +219,7 @@ func formatHTMLFiles(filePath string) {
 
 // CSS
 func formatCSSFiles(filePath string) {
-	installCheck("cssnano")
+	commandExists("cssnano")
 	cmd := exec.Command("cssnano", filePath, filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -228,7 +228,7 @@ func formatCSSFiles(filePath string) {
 
 // JS
 func formatJSFiles(filePath string) {
-	installCheck("uglifyjs")
+	commandExists("uglifyjs")
 	cmd := exec.Command("uglifyjs", "-b", "--", filePath, "-o", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -237,7 +237,7 @@ func formatJSFiles(filePath string) {
 
 // Python
 func formatPythonFiles(filePath string) {
-	installCheck("yapf")
+	commandExists("yapf")
 	cmd := exec.Command("yapf", "--in-place", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -246,7 +246,7 @@ func formatPythonFiles(filePath string) {
 
 // Java
 func formatJavaFiles(filePath string) {
-	installCheck("google-java-format")
+	commandExists("google-java-format")
 	cmd := exec.Command("google-java-format", "--replace", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -255,7 +255,7 @@ func formatJavaFiles(filePath string) {
 
 // C++
 func formatCPPFiles(filePath string) {
-	installCheck("clang-format")
+	commandExists("clang-format")
 	cmd := exec.Command("clang-format", "-style=Google", "-i", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -264,7 +264,7 @@ func formatCPPFiles(filePath string) {
 
 // C##
 func formatCSFiles(filePath string) {
-	installCheck("dotnet-format")
+	commandExists("dotnet-format")
 	cmd := exec.Command("dotnet-format", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -273,7 +273,7 @@ func formatCSFiles(filePath string) {
 
 // C
 func formatCFiles(filePath string) {
-	installCheck("clang-format")
+	commandExists("clang-format")
 	cmd := exec.Command("clang-format", "-style=Google", "-i", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -282,7 +282,7 @@ func formatCFiles(filePath string) {
 
 // TypeScript
 func formatTypeScriptFiles(filePath string) {
-	installCheck("gts")
+	commandExists("gts")
 	cmd := exec.Command("gts", "fix", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -291,7 +291,7 @@ func formatTypeScriptFiles(filePath string) {
 
 // PHP
 func formatPHPFiles(filePath string) {
-	installCheck("phptidy")
+	commandExists("phptidy")
 	cmd := exec.Command("phptidy", "replace", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -300,7 +300,7 @@ func formatPHPFiles(filePath string) {
 
 // Kotlin
 func formatKotlinFiles(filePath string) {
-	installCheck("ktlint")
+	commandExists("ktlint")
 	cmd := exec.Command("ktlint", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -309,7 +309,7 @@ func formatKotlinFiles(filePath string) {
 
 // Ruby
 func formatRubyFiles(filePath string) {
-	installCheck("rufo")
+	commandExists("rufo")
 	cmd := exec.Command("rufo", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -318,7 +318,7 @@ func formatRubyFiles(filePath string) {
 
 // Swift
 func formatSwiftFiles(filePath string) {
-	installCheck("swift-format")
+	commandExists("swift-format")
 	cmd := exec.Command("swift-format", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -327,7 +327,7 @@ func formatSwiftFiles(filePath string) {
 
 // Rust
 func formatRustFiles(filePath string) {
-	installCheck("rustfmt")
+	commandExists("rustfmt")
 	cmd := exec.Command("rustfmt", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -336,7 +336,7 @@ func formatRustFiles(filePath string) {
 
 // Scala
 func formatScalaFiles(filePath string) {
-	installCheck("scalafmt")
+	commandExists("scalafmt")
 	cmd := exec.Command("scalafmt", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -345,7 +345,7 @@ func formatScalaFiles(filePath string) {
 
 // Dart
 func formatDartFiles(filePath string) {
-	installCheck("dart")
+	commandExists("dart")
 	cmd := exec.Command("dart", "format", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -354,7 +354,7 @@ func formatDartFiles(filePath string) {
 
 // PowerShell
 func formatPowerShellFiles(filePath string) {
-	installCheck("Edit-DTWBeautifyScript")
+	commandExists("Edit-DTWBeautifyScript")
 	cmd := exec.Command("Edit-DTWBeautifyScript", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -363,7 +363,7 @@ func formatPowerShellFiles(filePath string) {
 
 // JSON
 func formatJSONFiles(filePath string) {
-	installCheck("json-format")
+	commandExists("json-format")
 	cmd := exec.Command("json-format", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -372,7 +372,7 @@ func formatJSONFiles(filePath string) {
 
 // Markdown
 func formatMarkdownFiles(filePath string) {
-	installCheck("mdformat")
+	commandExists("mdformat")
 	cmd := exec.Command("mdformat", filePath)
 	err = cmd.Run()
 	handleErrors(err)
@@ -381,18 +381,11 @@ func formatMarkdownFiles(filePath string) {
 
 // Yaml
 func formatYamlFiles(filePath string) {
-	installCheck("yamllint")
+	commandExists("yamllint")
 	cmd := exec.Command("yamllint", filePath)
 	err = cmd.Run()
 	handleErrors(err)
 	log.Println("Optimizing:", filePath)
-}
-
-// Application Check
-func installCheck(appName string) {
-	if !commandExists(appName) {
-		log.Printf("The application %s was not found in the system. \n", appName)
-	}
 }
 
 // Directory Check
@@ -414,13 +407,11 @@ func fileExists(filename string) bool {
 }
 
 // Application Check
-func commandExists(cmd string) bool {
-	appName, err := exec.LookPath(cmd)
+func commandExists(cmd string) {
+	cmd, err := exec.LookPath(cmd)
 	if err != nil {
-		return false
+		log.Printf("Error: The application %s was not found in the system.\n", cmd)
 	}
-	_ = appName
-	return true
 }
 
 // Handle errors
