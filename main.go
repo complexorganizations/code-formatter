@@ -19,12 +19,10 @@ func init() {
 		flag.Parse()
 		codePath = *tempCodePath
 	} else {
-		flag.Usage()
 		log.Fatal("Error: The system path has not been given.")
 	}
 	// System path
-	if len(codePath) < 1 || codePath == "/user/example/folder/file" {
-		flag.Usage()
+	if !folderExists(codePath) {
 		log.Fatal("Error: The system path has not been given.")
 	}
 }
