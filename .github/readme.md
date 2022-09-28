@@ -53,8 +53,6 @@ Is it possible to get the requisite formmaters mounted automatically?
 
 ---
 ### Author
-* Name: Prajwal Koirala
-* Website: [prajwalkoirala.com](https://www.prajwalkoirala.com)
 
 ---
 ### Credits
@@ -62,6 +60,5 @@ Open Source Community
 
 ---
 ### License
-Copyright © [Prajwal](https://github.com/prajwal-koirala)
 
 This project is unlicensed.
